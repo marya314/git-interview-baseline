@@ -332,7 +332,7 @@ The commits fetched via `git fetch` are now merged from the `origin/master` bran
 
 ### Combining `git fetch` with `git merge` by using `git pull`
 
-If you want to both fetch and merge, which is what you want to do 99% of the time, just type `git pull`. `git pull` is literally the combination of both `git fetch` and `git merge`.
+`git pull` is literally the combination of both `git fetch` and `git merge`.
 
 When you `git pull` the following things will occur:
 
@@ -341,7 +341,7 @@ When you `git pull` the following things will occur:
 
 ## Conclusion
 
-Git is complex, and collaborating with people in this matter is just hard - there's no easy way to allow 100s of people to all work on the same code base. These workflows are just being introduced to you.  You'll have lots of time to practice them and memorize what each command does. Don't try to learn it all at once; instead just start to get an understanding of what's what.
+Git is complex, and collaborating with people in this matter is just hard - there's no easy way to allow 100s of people to all work on the same code base. These workflows are just being introduced to you.  You'll have lots of time to practice them and memorize what each command does. 
 
 ![XKCD Git](http://imgs.xkcd.com/comics/git.png)
 
