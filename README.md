@@ -42,7 +42,7 @@ If we had isolated the new-feature into its own copy of our code, we could have 
 
 ## Making a branch with `git branch`
 
-Let's make a repository that we can use as a sandbox to experiment with the collaborative features of git. You don't have to follow along, you'll be able to understand the concepts from the reading but if you'd like, you can copy and paste these commands locally.
+Let's first do some setup by making a repository to experiment with the collaborative features of git. You don't have to follow along, you'll be able to understand the concepts from the reading but if you'd like, you can copy and paste these commands locally.
 
 From our home directory we're going to make a new directory for our mission-critical-application.
 
@@ -76,7 +76,7 @@ Right now our git log could be visualized as a timeline composed of two commits.
 
 ![First Two Commits](https://dl.dropboxusercontent.com/s/ikorf1qvvp4tay0/2015-11-02%20at%2011.15%20AM.png)
 
-### About `master` branch.
+### About `master` branch
 
 Notice that these commits are occurring in a linear sequence of events, almost like a timeline? We call this timeline a branch. Whenever you are working on commits in git, you are adding them on a timeline of code called a branch. The branch you are on by default at the start of any repository, your main timeline (the main branch) is called master.
 
@@ -96,11 +96,11 @@ The `master` git branch is our default branch.
 
 ### Starting a new feature with `git branch new-feature`
 
-To keep master clean, when we want to start a new feature, we should do it in an isolated feature branch. Our timeline will look as follows:
+To keep master clean, we'll start a new feature in an isolated feature branch. Our timeline will look as follows:
 
 ![Feature Branch](https://dl.dropboxusercontent.com/s/d61r0fxyriaf5oj/2015-11-02%20at%2011.52%20AM.png)
 
-After commit 2, we will branch out of master and create a new timeline for commits and events specifically related to the new feature. The master timeline remains unchanged and clean. Now that we've covered the idea of the new-feature branch, let's actually make it.
+After commit 2, we will branch out of master and create a new timeline for commits and events specifically related to the new feature. The master timeline remains unchanged and clean.
 
 To make a new branch simply type: `git branch <branch name>`. In the case of a branch relating to a new feature, we'd name the branch `new-feature` like so:
 
@@ -116,7 +116,7 @@ mission-critical-application $ git branch -a
   new-feature
 ```
 
-The `*` in front of the branch `master` indicates that `master` is currently our working branch and git tells us that we also have a branch called `new-feature`. If we made a commit right now, that commit would still be applied to our `master` branch.
+The `*` in front of the branch `master` indicates that `master` is currently our working branch and that we also have a branch called `new-feature`. Note that we only created the new branch, but did not switch to it. If we made a commit right now, that commit would still be applied to our `master` branch.
 
 ### Switching branches with `git checkout`
 
