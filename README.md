@@ -259,11 +259,25 @@ Fast-forward
 
 Now the branches have been merged and if you `ls`, you'll see the `new-feature` file from the `new-feature` branch in your current working directory that is checked out to master.
 
-## Working with remote branches with `git fetch` and `git pull`
+## Working with remote branches with `git fetch`, `git merge`, and `git pull`
 
-Your local branches can attach to remote branches that live on the internet, generally on GitHub, that your team members might contribute to and you can download locally.
+Your local branches can attach to and "track" remote branches that live on the internet, generally on GitHub, that your team members might contribute to and you can download locally. `git fetch`, `git merge`, and `git pull` are all ways to view and incorporate changes from remote branches.
 
-Whenever you want to update your local copy with all the branches that might have been added to the GitHub remote, you can type `git fetch`.
+**Protip: 99% of the time, you will be using `git pull`, which is a combination of `git fetch` and `git merge`. However, it's important to understand what each of these commands are doing, and how `git pull` works.**
+
+### Local and Remote Branches in git
+
+An important concept when collaborating in git are local and remote branches. Local branches live only on your machine - they have not been pushed up to a remote branch and only you can see them.
+
+Remotes are branches that exist in a remote location (usually GitHub). This allows other developers to access the branch, pull down the latest commits, and add their own work and commits.
+
+When you make a new branch using `git checkout -b new-feature`, as we've done previously, it creates a *local* branch on your machine called new-feature. You can then push the newly created new-feature branch to the remote repository (called origin here) using:
+
+````
+git push -u origin new-feature
+````
+
+Now the new branch is available in the remote repository.
 
 ```
 mission-critical-application $ git fetch
