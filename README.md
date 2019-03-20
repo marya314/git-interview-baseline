@@ -42,7 +42,7 @@ If we had isolated the new-feature into its own copy of our code, we could have 
 
 ## Making a branch with `git branch`
 
-Let's quickly make a repository that we can use as a sandbox to experiment with the collaborative features of git. You don't have to follow along, you'll be able to understand the concepts from the reading but if you'd like, you can copy and paste these commands locally.
+Let's make a repository that we can use as a sandbox to experiment with the collaborative features of git. You don't have to follow along, you'll be able to understand the concepts from the reading but if you'd like, you can copy and paste these commands locally.
 
 From our home directory we're going to make a new directory for our mission-critical-application.
 
@@ -78,7 +78,7 @@ Right now our git log could be visualized as a timeline composed of two commits.
 
 ### About `master` branch.
 
-Notice that these commits are occurring in a linear sequence of events, almost like a timeline? We call this timeline a branch. Whenever you are working on commits in git, you are adding them on a timeline of code called a branch. The branch you are on by default at the start of any repository, your main timeline, the main branch is called master.
+Notice that these commits are occurring in a linear sequence of events, almost like a timeline? We call this timeline a branch. Whenever you are working on commits in git, you are adding them on a timeline of code called a branch. The branch you are on by default at the start of any repository, your main timeline (the main branch) is called master.
 
 ![Master Branch](https://dl.dropboxusercontent.com/s/v75as2cf6xr8n8a/2015-11-02%20at%2011.17%20AM.png)
 
@@ -90,7 +90,9 @@ On branch master
 nothing to commit, working directory clean
 ```
 
-The `master` git branch is our default branch. One of the responsible ways to use git is to make sure that the `master` branch is always clean with working code so that if we ever need to add a bug fix, we can do it and deploy a new version of the application immediately. We don't put broken code in master so that we can always deploy master.
+The `master` git branch is our default branch.
+
+**Protip: A best practice when using git is to make sure that the `master` branch is always clean with working code. We don't put broken code in master so that we can always deploy master.**
 
 ### Starting a new feature with `git branch new-feature`
 
