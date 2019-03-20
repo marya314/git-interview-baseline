@@ -279,6 +279,12 @@ git push -u origin new-feature
 
 Now the new branch is available in the remote repository.
 
+### Using `git fetch`
+
+Perhaps your coworkers or other developers have contributed to the remote repository. You want to bring your copy of the remote repository up to date, but you don't want to integrate anything just yet. Perhaps the new commits may break the new feature you are building.
+
+In this case, you can use `git fetch`.
+
 ```
 mission-critical-application $ git fetch
 remote: Counting objects: 4, done.
@@ -290,7 +296,7 @@ From github.com:aviflombaum/mission-critical-application
  * [new branch]      remote-feature-branch -> origin/remote-feature-branch
 ```
 
-From within `master` (though technically what branch I was in when I typed `git fetch` does not matter), I executed `git fetch`. The last 3 lines of output are really important, let's take a closer look:
+The last 3 lines of output are really important, let's take a closer look:
 
 ```
 From github.com:aviflombaum/mission-critical-application
@@ -302,11 +308,11 @@ The first line, `From github.com:aviflombaum/mission-critical-application` is in
 
 When we `fetch` with git, we are asking to copy all changes on the remote to our local git repository, but not actually integrate any. The next line, `bfe50fc..0ae1da2  master     -> origin/master` is telling us that a new commit was found in `origin/master`. `origin/master` means the GitHub version of `master`. Even though git fetched a new commit from `origin/master`, it did not merge it into the local master.
 
-![Fetch without integration](https://dl.dropboxusercontent.com/s/iy2jovft8ykrxbd/2015-11-02%20at%202.08%20PM.png)
+### Using `git merge`
 
-Our remote copy on GitHub has a file, `remote-bug-fix`, presumably some code that another developer pushed up to our remote version of the `master` branch to fix a bug. Even after we fetched, our local copy still doesn't appear to have that file.
+Our remote copy on GitHub has a file, `remote-bug-fix`, presumably some code that another developer pushed up to our remote version of the `master` branch to fix a bug. We now want to integrate that code into our local copy.
 
-After you fetch, you have access to the remote code but you still have to merge it. How do you merge a change fetched from `origin/master` into your current master? From within your local master branch, type: `git merge origin/master`, referring to the branch's full path, `remote/branch`, or `origin/master`.
+From within your local master branch, type: `git merge origin/master`, referring to the branch's full path, `remote/branch`, or `origin/master`.
 
 ```
 mission-critical-application $ git merge origin/master
@@ -321,16 +327,6 @@ mission-critical-application $ ls
 ```
 
 The commits fetched via `git fetch` are now merged from the `origin/master` branch into our local `master` branch. And now `ls` reveals that the file present on the remote, `remote-bug-fix` is integrated into our local copy of `master` as well.
-
-When we fetched, git also outputted: `* [new branch]      remote-feature-branch -> origin/remote-feature-branch`. Similarly, git fetched a new branch and if we want to check it out or merge it we can using `git checkout` or `git merge`. Let's checkout what code is on `remote-feature-branch`, a branch another developer made for another feature and pushed up to GitHub so they can share it with us.
-
-```
-mission-critical-application $ git checkout remote-feature-branch
-Branch remote-feature-branch set up to track remote branch remote-feature-branch from origin.
-Switched to a new branch 'remote-feature-branch'
-```
-
-When we checkout a remote branch fetched, git will create a local branch to track that remote and switch to that branch. We can now do work, push it back up to GitHub, and another developer can fetch those changes down.
 
 `git fetch` is a pretty low-level git command we don't use that much because it always requires two steps, first `git fetch` and then `git merge` to actually integrate those changes into your working branch. Generally, if you are in `master` you want to immediately `fetch` and `merge` any changes to the remote master.
 
