@@ -1,5 +1,9 @@
 # Git Collaboration
 
+## Overview
+
+This lesson will show you how to use git in a collaborative setting when working with various projects and other developers. We'll cover the most common git commands and the situations in which you will use them.
+
 ## Objectives
 
 1. Make a new branch for your repository with `git branch`.
@@ -11,7 +15,7 @@
 7. Merge updated remote branches with `git merge`.
 8. Update and merge remote branches with `git pull`.
 
-## Overview
+## Why Collaborate Using Git?
 
 A key to collaborating with git is to keep discrete and individual lines of work isolated from each other. Consider the following scenario.
 
