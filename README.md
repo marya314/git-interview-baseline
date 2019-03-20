@@ -231,20 +231,22 @@ The final step of our `new-feature` work sprint is to figure out how to merge th
 
 ## Merging branches with `git merge`
 
-Our goal is to bring the timeline of commits that occurred on the `new-feature` branch into the `master` so that at the end of the operation, our `master` timeline looks like:
+We now have two separate branches with their own work and commits. Our goal is to bring the timeline of commits that occurred on the `new-feature` branch into  `master` so that at the end of the operation, our `master` timeline looks like:
 
 ![Merged Timeline](https://dl.dropboxusercontent.com/s/bf0cktf3ag549z2/2015-11-02%20at%201.15%20PM.png)
 
-By merging the timelines, `master` will have all of the commits from the `new-feature` branch as though those events occured on the `master` timeline.
+Think of it as putting history back together again.
 
-When we merge a branch with `git merge`, it's important to be currently working on your target branch, the branch you want to move into. The first step for our `new-feature` merge is to checkout `master` because that is where we want the commits to end up.
+By merging the branches, `master` will inherit all of the commits from the `new-feature` branch as though those events occurred on the `master` timeline.
+
+When we merge a branch with `git merge`, it's important to be currently working on your target branch, or the branch you want to move into. The first step for our `new-feature` merge is to checkout `master` because that is where we want the commits to end up.
 
 ```
 mission-critical-application $ git checkout master
 Switched to branch 'master'
 ```
 
-Once on your target branch, type: `git merge <branch name>` where `<branch name>` is the branch we want to merge. In this case, `git merge new-feature` will do the trick.
+Once on your target branch, type: `git merge <branch name>` where `<branch name>` is the branch we want to merge. In this case, it is `git merge new-feature`.
 
 ```
 mission-critical-application $ git merge new-feature
