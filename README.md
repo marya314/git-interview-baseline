@@ -6,14 +6,12 @@ This lesson will show you how to use git in a collaborative setting when working
 
 ## Objectives
 
-1. Make a new branch for your repository with `git branch`.
-2. Checkout a branch with `git checkout`.
-3. Create and checkout a new branch with `git checkout -b`.
-4. Create commits within a branch.
-5. Merge branches with `git merge`.
-6. Update branches from remotes with `git fetch`.
-7. Merge updated remote branches with `git merge`.
-8. Update and merge remote branches with `git pull`.
+1. Create a new branch for your repository with `git branch` or `git checkout -b`.
+2. Checkout branches with `git checkout`.
+3. Make commits within a branch.
+4. Update branches from remotes with `git fetch`.
+5. Merge updated remote branches with `git merge`.
+6. Update and merge remote branches with `git pull`.
 
 ## Why Collaborate Using Git?
 
