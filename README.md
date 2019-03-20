@@ -309,6 +309,8 @@ The first line, `From github.com:aviflombaum/mission-critical-application` is in
 
 When we `fetch` with git, we are asking to copy all changes on the remote to our local git repository, but not actually integrate any. The next line, `bfe50fc..0ae1da2  master     -> origin/master` is telling us that a new commit was found in `origin/master`. `origin/master` means the GitHub version of `master`. Even though git fetched a new commit from `origin/master`, it did not merge it into the local master.
 
+Git also outputted: `* [new branch]      remote-feature-branch -> origin/remote-feature-branch`. Here, git fetched a new branch. If we checkout a remote branch that was fetched, git will create a local branch to track that remote and switch to that branch. We can now do work, push it back up to GitHub, and another developer can fetch those changes down.
+
 ### Using `git merge`
 
 Our remote copy on GitHub has a file, `remote-bug-fix`, presumably some code that another developer pushed up to our remote version of the `master` branch to fix a bug. We now want to integrate that code into our local copy.
