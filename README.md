@@ -2,16 +2,17 @@
 
 ## Overview
 
-This lesson will show you how to use git in a collaborative setting when working with various projects and other developers. We'll cover the most common git commands and the situations in which you will use them.
+This lesson will show you how to use git in a collaborative setting. We'll cover the most common git commands and the situations in which you will use them.
 
 ## Objectives
 
 1. Create a new branch for your repository with `git branch` or `git checkout -b`.
 2. Checkout branches with `git checkout`.
 3. Make commits within a branch.
-4. Update branches from remotes with `git fetch`.
-5. Merge updated remote branches with `git merge`.
-6. Update and merge remote branches with `git pull`.
+4. Merge local branches with `git merge`.
+5. Update branches from remotes with `git fetch`.
+6. Merge updated remote branches with `git merge`.
+7. Update and merge remote branches with `git pull`.
 
 ## Why Collaborate Using Git?
 
@@ -118,7 +119,7 @@ mission-critical-application $ git branch -a
 
 The `*` in front of the branch `master` indicates that `master` is currently our working branch and that we also have a branch called `new-feature`. Note that we only created the new branch, but did not switch to it. If we made a commit right now, that commit would still be applied to our `master` branch.
 
-### Switching branches with `git checkout`
+## Switching branches with `git checkout`
 
 We need to checkout or switch into our `new-feature` branch so that git knows that all commits we will be making apply to only that branch. We can move between branches with `git checkout <branch name>`.
 
@@ -257,7 +258,7 @@ Fast-forward
  create mode 100644 new-feature
 ```
 
-Now the branches have been merged and if you `ls`, you'll see the `new-feature` file from the `new-feature` branch in your current working directory that is checked out to master.
+Now the branches have been merged and if you `ls`, you'll see the `new-feature` file from the `new-feature` branch in your current working directory that is checked out to master. Note that this merged two local branches on our machine. To learn how to work with remote branches, let's continue on.
 
 ## Working with remote branches with `git fetch`, `git merge`, and `git pull`
 
@@ -341,7 +342,7 @@ When you `git pull` the following things will occur:
 
 ## Conclusion
 
-Git is complex, and collaborating with people in this matter is just hard - there's no easy way to allow 100s of people to all work on the same code base. These workflows are just being introduced to you.  You'll have lots of time to practice them and memorize what each command does. 
+Git is complex, and collaborating with people in this matter is just hard - there's no easy way to allow 100s of people to all work on the same code base. These workflows are just being introduced to you.  You'll have lots of time to practice them and memorize what each command does.
 
 ![XKCD Git](http://imgs.xkcd.com/comics/git.png)
 
