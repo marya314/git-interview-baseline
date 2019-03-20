@@ -282,7 +282,7 @@ Now the new branch is available in the remote repository.
 
 ### Using `git fetch`
 
-Perhaps your coworkers or other developers have contributed to the remote repository. You want to bring your copy of the remote repository up to date, but you don't want to integrate anything just yet. Perhaps the new commits may break the new feature you are building.
+Perhaps your coworkers or other developers have contributed to the remote repository. You want to bring your copy of the remote repository up to date, but you don't want to integrate anything just yet. Perhaps the new commits may break the feature you are building.
 
 In this case, you can use `git fetch`.
 
@@ -297,7 +297,7 @@ From github.com:aviflombaum/mission-critical-application
  * [new branch]      remote-feature-branch -> origin/remote-feature-branch
 ```
 
-The last 3 lines of output are really important, let's take a closer look:
+The last lines of output are really important, let's take a closer look:
 
 ```
 From github.com:aviflombaum/mission-critical-application
