@@ -120,7 +120,7 @@ The `*` in front of the branch `master` indicates that `master` is currently our
 
 ### Switching branches with `git checkout`
 
-We need to checkout or move into our `new-feature` timeline or branch so that git knows that all commits made apply to only that unit of work, timeline, or branch. We can move between branches with `git checkout <branch name>`.
+We need to checkout or switch into our `new-feature` branch so that git knows that all commits we will be making apply to only that branch. We can move between branches with `git checkout <branch name>`.
 
 ```
 mission-critical-application $ git status
@@ -134,6 +134,8 @@ nothing to commit, working directory clean
 ```
 
 We started on `master` and then checked out our `new-feature` branch with `git checkout new-feature`, thereby moving into that timeline.
+
+**Protip: You can create and checkout a new branch in one command using: `git checkout -b new-branch-name`. That will both create the branch `new-branch-name` and move into it by checking it out.**
 
 Let's make a commit in this `new-feature` and get the feature started by making a new file, `new-feature-file` to represent the code for the new feature.
 
@@ -150,9 +152,7 @@ You can see the commit we made was made in the context of the `new-feature` bran
 
 Right as we got started on that feature though, we get another bug report and have to move back into master to fix the bug and then deploy master. How do we move from `new-feature` branch back to `master`? What will our code look like when we move back to `master`, will we see the remnants of the `new-feature` branch and code represented by the `new-feature-file`?
 
-**Protip: You can create and checkout a new branch in one command using: `git checkout -b new-branch-name`. That will both create the branch `new-branch-name` and move into it by checking it out.**
-
-#### Moving back to `master` with `git checkout master`
+### Moving back to `master` with `git checkout master`
 
 You can always move between branches with `git checkout`. Since we are currently on `new-feature`, we can move back to master with `git checkout master`.
 
@@ -177,6 +177,8 @@ Switched to branch 'master'
 
 ![Switching between branches](https://dl.dropboxusercontent.com/s/qzajqsd9f6njauc/2015-11-02%20at%2012.12%20PM.png)
 
+### Working in Two Branches
+
 From master, one thing you'll notice is that the code you wrote on `new-feature`, namely the file, `new-feature-file`, is not present in the current directory.
 
 ```
@@ -184,7 +186,7 @@ mission-critical-application $ ls
 application.rb first-bug-fix.rb
 ```
 
-The master branch only has the code from the most recent commit relative to the master timeline or branch. The code from our `new-feature` is tucked away in that branch, waiting patiently in isolation from the rest of our code in `master` for us to finish the feature.
+The master branch *only has the code from the most recent commit relative to the master timeline or branch*. The code from our `new-feature` is tucked away in that branch, waiting patiently in isolation from the rest of our code in `master`.
 
 Once you're on master you are free to make a commit to fix the bug, which we'll represent with a new file, `second-bug-fix.rb`.
 
@@ -198,9 +200,9 @@ Let's look at our timeline now.
 
 ![Commit on Master](https://dl.dropboxusercontent.com/s/9ipgkog7yv8hrok/2015-11-02%20at%2012.18%20PM.png)
 
-We were able to update the timeline in master with the fix to the bug without touching any of the code in new-feature. `new-feature` branch and timeline remains 1 commit behind master, because the second bug fix commit occured in master and `new-feature` branch was created only with the commits at the moment when the branch was created. You could describe `master` as being 1 commit ahead of the `new-feature` branch.
+We were able to update the master branch with the bug fix without touching any of the code in new-feature. The `new-feature` branch is now 1 commit behind master because `new-feature`  was created only with the commits at the moment when the branch was created. You could describe `master` as being 1 commit ahead of the `new-feature` branch.
 
-Let's go back into `new-feature` and complete the feature and commit it and then look at the timeline. Remember how to move from `master` back to `new-feature`?
+Let's go back into `new-feature`, complete the feature and commit it, then look at the timeline. Remember how to move from `master` back to `new-feature`?
 
 ```
 mission-critical-application $ git status
