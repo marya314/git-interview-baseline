@@ -14,7 +14,7 @@ This lesson will show you how to use git in a collaborative setting. We'll cover
 6. Merge updated remote branches with `git merge`.
 7. Update and merge remote branches with `git pull`.
 
-## Why Collaborate Using Git?
+## Why Collaborate Using git?
 
 A key to collaborating with git is to keep discrete and individual lines of work isolated from each other. Consider the following scenario:
 
